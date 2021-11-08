@@ -1,0 +1,1 @@
+INSERT INTO COMIDA (ID, NOME, DESCRICAO) VALUES(1, 'Teste', 'teste');
