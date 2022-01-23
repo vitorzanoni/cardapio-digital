@@ -41,6 +41,14 @@ public class ComidaServiceImpl implements ComidaService {
 		
 	}
 
-	
+    @Override
+    public void alterarComida(Long id, ComidaDTO comidaDTO) {
+        Comida comida = comidaRepository.getById(id);
+        comida.setDescricao(comidaDTO.getDescricao());
+        comida.setImagem(comidaDTO.getImagem());
+        comida.setNome(comida.getNome());
+        comida.setValor(comida.getValor());
+        comidaRepository.save(comida);
+    }
 
 }

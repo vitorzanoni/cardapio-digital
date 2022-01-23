@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,13 +19,8 @@ import devweb.cardapiodigitalapi.service.contract.ComidaService;
 @RequestMapping("/comidas")
 public class ComidaController {
 
-	@Autowired
-	private ComidaService comidaService;
-
-	@GetMapping
-	public List<ComidaDTO> findComidas(String nome) {
-		return comidaService.findComidas(nome);
-	}
+    @Autowired
+    private ComidaService comidaService;
 
 	@PostMapping
 	public void insertComida(@RequestBody ComidaDTO comidaDTO){
@@ -36,4 +32,14 @@ public class ComidaController {
 	public void deleteComida(@PathVariable(required = true) Long id) {
 		comidaService.deleteComida(id);
 	}
+	
+    @GetMapping
+    public List<ComidaDTO> findComidas(String nome) {
+        return comidaService.findComidas(nome);
+    }
+
+    @PutMapping("{id}")
+    public void alterarComida(@PathVariable(required = true) Long id, @RequestBody ComidaDTO comidaDTO) {
+        comidaService.alterarComida(id, comidaDTO);
+    }
 }
