@@ -11,7 +11,7 @@
 </mat-toolbar>
 <mat-sidenav-container (backdropClick)="close('backdrop')">
     <mat-sidenav #sidenav (keydown.escape)="close('escape')" disableClose style="margin-top: 64px;">
-        <p><button mat-button color="primary" (click)="close('toggle button')" style="width: 200px;"> Comidas </button>
+        <p><button mat-button (click)="close('toggle button')" style="width: 200px;"> Comidas </button>
         </p>
     </mat-sidenav>
 

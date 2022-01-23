@@ -11,6 +11,18 @@
     z-index: 2;
 }
 
+.mat-toolbar.mat-primary {
+    background: #730d0d;
+}
+
+.mat-sidenav {
+    background: #fff8dc;
+}
+
+.mat-button {
+    color: #730d0d;
+}
+
 .mat-sidenav-container {
     position: absolute;
     top: 0;
