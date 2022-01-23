@@ -8,10 +8,8 @@ import org.springframework.stereotype.Service;
 import devweb.cardapiodigitalapi.dto.ComidaDTO;
 import devweb.cardapiodigitalapi.repository.ComidaRepository;
 import devweb.cardapiodigitalapi.service.contract.ComidaService;
-import lombok.AllArgsConstructor;
 
 @Service
-@AllArgsConstructor
 public class ComidaServiceImpl implements ComidaService {
 	
 	@Autowired
