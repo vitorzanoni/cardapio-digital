@@ -1,5 +1,7 @@
 package devweb.cardapiodigitalapi.model;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -19,5 +21,9 @@ public class Comida {
 	private String nome;
 	
 	private String descricao;
+
+	private String imagem;
+
+	private BigDecimal valor;
 
 }
