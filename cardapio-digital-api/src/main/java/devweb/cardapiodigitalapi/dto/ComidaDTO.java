@@ -6,10 +6,12 @@ import java.util.stream.Collectors;
 
 import devweb.cardapiodigitalapi.model.Comida;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
+@NoArgsConstructor
 public class ComidaDTO {
 
 	private String nome;

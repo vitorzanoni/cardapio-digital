@@ -8,4 +8,8 @@ public interface ComidaService {
 
 	List<ComidaDTO> findComidas(String nome);
 
+    void deleteComida(Long id);
+
+    void insertComida(ComidaDTO comidaDTO);
+
 }

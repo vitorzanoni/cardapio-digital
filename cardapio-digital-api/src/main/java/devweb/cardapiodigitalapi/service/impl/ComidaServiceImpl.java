@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import devweb.cardapiodigitalapi.dto.ComidaDTO;
+import devweb.cardapiodigitalapi.model.Comida;
 import devweb.cardapiodigitalapi.repository.ComidaRepository;
 import devweb.cardapiodigitalapi.service.contract.ComidaService;
 
@@ -23,5 +24,23 @@ public class ComidaServiceImpl implements ComidaService {
 	
 		return  ComidaDTO.toDTO(comidaRepository.findByNome(nome));
 	}
+
+	@Override
+	public void deleteComida(Long id) {
+		comidaRepository.deleteById(id);
+	}
+
+	@Override
+	public void insertComida(ComidaDTO comidaDTO) {
+		Comida comida = new Comida();
+		comida.setDescricao(comidaDTO.getDescricao());
+		comida.setImagem(comidaDTO.getImagem());
+		comida.setNome(comidaDTO.getNome());
+		comida.setValor(comidaDTO.getValor());
+		comidaRepository.save(comida);
+		
+	}
+
+	
 
 }
