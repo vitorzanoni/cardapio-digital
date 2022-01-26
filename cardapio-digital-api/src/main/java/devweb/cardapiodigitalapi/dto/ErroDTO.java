@@ -11,16 +11,17 @@ import lombok.Setter;
 @Setter
 public class ErroDTO {
 
-	private String status;
-	private String message;
-	private String devMessage;
-	private LocalDateTime devMessageTime;
+    private String status;
+    private String message;
+    private String devMessage;
+    private LocalDateTime devMessageTime;
 
-	public ErroDTO(HttpStatus status, String message, String devMessage, LocalDateTime devMessageTime) {
-		super();
-		this.status = String.valueOf(status.value());
-		this.message = message;
-		this.devMessage = devMessage;
-		this.devMessageTime = devMessageTime;
-	}
+    public ErroDTO(HttpStatus status, String message, String devMessage, LocalDateTime devMessageTime) {
+        super();
+        this.status = String.valueOf(status.value());
+        this.message = message;
+        this.devMessage = devMessage;
+        this.devMessageTime = devMessageTime;
+    }
+
 }
