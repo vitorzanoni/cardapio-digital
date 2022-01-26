@@ -12,18 +12,18 @@ import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
 @SpringBootApplication
 public class CardapioDigitalApiApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(CardapioDigitalApiApplication.class, args);
-		
-		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName("org.h2.Driver");
-		dataSource.setUrl("jdbc:h2:mem:testdb");
-		dataSource.setUsername("sa");
-		dataSource.setPassword("password");
+    public static void main(String[] args) {
+        SpringApplication.run(CardapioDigitalApiApplication.class, args);
 
-		Resource initSchema = new ClassPathResource("script/insert.sql");
-		DatabasePopulator databasePopulator = new ResourceDatabasePopulator(initSchema);
-		DatabasePopulatorUtils.execute(databasePopulator, dataSource);
-	}
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setDriverClassName("org.h2.Driver");
+        dataSource.setUrl("jdbc:h2:mem:testdb");
+        dataSource.setUsername("sa");
+        dataSource.setPassword("password");
+
+        Resource initSchema = new ClassPathResource("script/insert.sql");
+        DatabasePopulator databasePopulator = new ResourceDatabasePopulator(initSchema);
+        DatabasePopulatorUtils.execute(databasePopulator, dataSource);
+    }
 
 }

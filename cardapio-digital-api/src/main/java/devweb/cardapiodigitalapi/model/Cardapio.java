@@ -13,18 +13,18 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class Comida {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
-	private String nome;
-	
-	private String descricao;
+public class Cardapio {
 
-	private String imagem;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	private BigDecimal valor;
+    private String nome;
+
+    private String descricao;
+
+    private String imagem;
+
+    private BigDecimal valor;
 
 }
