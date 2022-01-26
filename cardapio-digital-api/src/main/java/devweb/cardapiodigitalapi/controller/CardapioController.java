@@ -28,7 +28,7 @@ public class CardapioController {
     }
 
     @DeleteMapping("{id}")
-    public void deleteComida(@PathVariable(required = true) Long id) {
+    public void deleteItem(@PathVariable(required = true) Long id) {
         cardapioService.deleteItem(id);
     }
 

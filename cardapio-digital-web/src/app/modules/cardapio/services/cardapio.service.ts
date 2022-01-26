@@ -1,13 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 
 const API = 'http://localhost:8080/';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
-export class ComidasService {
+export class CardapioService {
 
     constructor(private readonly http: HttpClient) { }
 
