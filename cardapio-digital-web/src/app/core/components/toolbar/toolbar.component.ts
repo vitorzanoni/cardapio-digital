@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 
@@ -7,11 +7,15 @@ import { Router } from '@angular/router';
     templateUrl: './toolbar.component.html',
     styleUrls: ['./toolbar.component.css']
 })
-export class ToolbarComponent {
+export class ToolbarComponent implements OnInit {
 
     @ViewChild('sidenav') sidenav!: MatSidenav;
 
     constructor(private router: Router) { }
+
+    ngOnInit(): void {
+        this.router.navigate(['home']);
+    }
 
     close(reason: string) {
         this.sidenav.close();

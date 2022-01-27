@@ -9,12 +9,15 @@ const routes: Routes = [
         component: ToolbarComponent,
         children: [
             {
+                path: 'home',
+                loadChildren: () => import('./core/core.module').then(m => m.CoreModule)
+            },
+            {
                 path: 'cardapio',
                 loadChildren: () => import('./modules/cardapio/cardapio.module').then(m => m.CardapioModule)
             }
         ]
     },
-    { path: 'mesa', component: AppComponent },
     { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
