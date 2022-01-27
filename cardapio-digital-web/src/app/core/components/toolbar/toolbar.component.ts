@@ -15,6 +15,6 @@ export class ToolbarComponent {
 
     close(reason: string) {
         this.sidenav.close();
-        this.router.navigate(['remessas']);
+        this.router.navigate(['cardapio/insert']);
     }
 }
