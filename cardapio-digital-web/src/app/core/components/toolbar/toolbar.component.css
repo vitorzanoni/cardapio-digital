@@ -4,7 +4,7 @@
 
 .scale-2 {
     transform: scale(2);
-    font-family: 'Abril Fatface', cursive;
+    font-family: 'Oswald', sans-serif;
 }
 
 .mat-toolbar {
@@ -17,7 +17,7 @@
 }
 
 .mat-sidenav {
-    background-color: #fff8dc;
+    background-color: #fffae8;
 }
 
 .mat-button {
@@ -32,6 +32,6 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #fff8dc;
+    background-color: #fffae8;
     
 }
