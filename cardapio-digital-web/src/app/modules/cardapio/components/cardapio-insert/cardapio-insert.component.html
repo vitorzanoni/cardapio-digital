@@ -1,26 +1,29 @@
 <div style="margin: auto; width: 30%; padding: 200px;">
-    <mat-card class= "mat-elevation-z8">
-        <form class="example-form" >
+    <mat-card class="mat-elevation-z8">
+        <mat-card-title style = "margin-bottom: 30px;  font-family: 'Oswald', sans-serif">
+            Cadastro de Item
+        </mat-card-title>
             <div>
-            <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Nome do Item</mat-label>
-                <input  matInput placeholder="Ex. Pizza" >
-            </mat-form-field>
-            <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Descrição</mat-label>
-                <input  matInput placeholder="Ex. Pizza de calabresa com azeitona" >
-            </mat-form-field>
-            <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Valor</mat-label>
-                <input  matInput placeholder="Ex. 19,90">
-            </mat-form-field>
-            <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Imagem</mat-label>
-                <input  matInput placeholder="Coloque o link da imagem aqui" >
-            </mat-form-field>
-        </div>
-
-        </form>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Nome do Item</mat-label>
+                    <input matInput placeholder="Ex. Pizza" [(ngModel)]="nome">
+                </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Descrição</mat-label>
+                    <input matInput placeholder="Ex. Pizza de calabresa com azeitona" [(ngModel)] = "descricao">
+                </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Valor</mat-label>
+                    <input matInput placeholder="Ex. 19,90" [(ngModel)] = "valor" type="number">
+                </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Imagem</mat-label>
+                    <input matInput placeholder="Coloque o link da imagem aqui" [(ngModel)] = "imagem">
+                </mat-form-field>
+                <div style="text-align: center;">
+                    <button mat-raised-button style="background-color: #730d0d; color: white;" (click) = "salvar()">Salvar</button>
+                </div>
+            </div>
     </mat-card>
 
 </div>

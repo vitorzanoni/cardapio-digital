@@ -10,10 +10,15 @@ const API = 'http://localhost:8080/';
 })
 export class CardapioService {
 
-    constructor(private readonly http: HttpClient) { }
+    constructor(private http: HttpClient) { }
 
     findItens(nome: string): Observable<ItemDto[]> {
         return this.http.get<ItemDto[]>(`${API}cardapio?nome=${nome}`);
+    }
+
+    saveItem(item: ItemDto) {
+        console.log(item);
+        return this.http.post(API + "cardapio/", item);
     }
 
 }

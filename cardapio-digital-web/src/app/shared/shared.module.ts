@@ -15,6 +15,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 import { MatSortModule } from '@angular/material/sort';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -36,7 +37,8 @@ import { MatSortModule } from '@angular/material/sort';
         MatNativeDateModule,
         CdkTableModule,
         MatSidenavModule,
-        MatSortModule
+        MatSortModule,
+        HttpClientModule
     ],
     exports: [
         CommonModule,
