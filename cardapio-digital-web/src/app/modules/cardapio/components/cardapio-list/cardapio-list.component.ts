@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ItemDto } from '../../models/item-dto';
+import { CardapioService } from '../../services/cardapio.service';
 
 @Component({
     selector: 'app-cardapio-list',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardapioListComponent implements OnInit {
 
-    constructor() { }
+    itens: ItemDto[] = [];
+
+    constructor(private service: CardapioService) { }
 
     ngOnInit(): void {
+        this.service.findItens('').subscribe(itens => this.itens = itens);
     }
 
 }
