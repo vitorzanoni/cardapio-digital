@@ -1,4 +1,4 @@
-import { Component, ComponentFactoryResolver, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ItemDto } from '../../models/item-dto';
 import { CardapioService } from '../../services/cardapio.service';

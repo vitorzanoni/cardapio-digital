@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ItemDto } from '../../models/item-dto';
 import { CardapioService } from '../../services/cardapio.service';
 

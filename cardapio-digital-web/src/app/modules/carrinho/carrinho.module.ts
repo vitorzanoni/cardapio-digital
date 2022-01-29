@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { CarrinhoListComponent } from './components/carrinho-list/carrinho-list.component';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { CarrinhoListComponent } from './components/carrinho-list/carrinho-list.component';
 
 const routes: Routes = [
     {
