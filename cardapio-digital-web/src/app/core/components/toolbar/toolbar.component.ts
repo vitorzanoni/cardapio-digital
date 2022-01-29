@@ -19,6 +19,6 @@ export class ToolbarComponent implements OnInit {
 
     close(reason: string) {
         this.sidenav.close();
-        this.router.navigate(['cardapio/insert']);
+        this.router.navigate(['cardapio/']);
     }
 }
