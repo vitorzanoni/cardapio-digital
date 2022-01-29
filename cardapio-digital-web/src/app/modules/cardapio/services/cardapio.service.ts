@@ -23,7 +23,6 @@ export class CardapioService {
     }
 
     saveItem(item: ItemDto) {
-        console.log(item);
         return this.http.post(API + "cardapio/", item);
     }
 

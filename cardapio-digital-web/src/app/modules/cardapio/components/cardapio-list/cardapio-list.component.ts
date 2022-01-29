@@ -15,7 +15,6 @@ export class CardapioListComponent implements OnInit {
     constructor(private service: CardapioService, private router: Router) { }
 
     ngOnInit(): void {
-        console.log(this.router.url);
         this.service.findItens('', this.router.url).subscribe(itens => this.itens = itens);
     }
 

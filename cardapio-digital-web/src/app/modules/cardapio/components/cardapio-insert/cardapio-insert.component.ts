@@ -15,7 +15,7 @@ export class CardapioInsertComponent {
   imagem = '';
   checked = false;
   indeterminate = false;
-  labelPosition: '/cardapio/comidas' | '/cardapio/bebidas' | '/cardapio/sobremesas' = '/cardapio/comidas';
+  tipo: '/cardapio/comidas' | '/cardapio/bebidas' | '/cardapio/sobremesas' = '/cardapio/comidas';
   disabled = false;
 
   constructor(private service: CardapioService) { }
@@ -26,12 +26,12 @@ export class CardapioInsertComponent {
     item.descricao = this.descricao;
     item.valor = this.valor;
     item.imagem = this.imagem;
+    item.tipo = this.tipo;
     this.service.saveItem(item).subscribe();
     this.nome = '';
     this.descricao = '';
     this.valor = '';
     this.imagem = '';
-
-    console.log(item);
+    this.tipo = '/cardapio/comidas';
   }
 }

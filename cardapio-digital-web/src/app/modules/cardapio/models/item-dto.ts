@@ -4,4 +4,5 @@ export class ItemDto {
     descricao!: string;
     valor!: string;
     imagem!: string;
+    tipo!: string;
 }
