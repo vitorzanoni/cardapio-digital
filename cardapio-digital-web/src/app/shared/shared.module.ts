@@ -39,7 +39,6 @@ import { RouterModule } from '@angular/router';
         CdkTableModule,
         MatSidenavModule,
         MatSortModule,
-        HttpClientModule,
         FlexLayoutModule
     ],
     exports: [
