@@ -19,6 +19,8 @@ export class ToolbarComponent implements OnInit {
 
     close(reason: string) {
         this.sidenav.close();
-        this.router.navigate(['cardapio/']);
+        if (reason !== 'backdrop') {
+            this.router.navigate([reason]);
+        }
     }
 }

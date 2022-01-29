@@ -15,6 +15,10 @@ const routes: Routes = [
             {
                 path: 'cardapio',
                 loadChildren: () => import('./modules/cardapio/cardapio.module').then(m => m.CardapioModule)
+            },
+            {
+                path: 'carrinho',
+                loadChildren: () => import('./modules/carrinho/carrinho.module').then(m => m.CarrinhoModule)
             }
         ]
     },

@@ -1,12 +1,18 @@
 .container {
-    position: relative;
+    position: fixed;
     text-align: left;
     color: white;
 }
 
 .centered {
-    position: absolute;
-    top: 30%;
-    left: 50%;
+    position: fixed;
+    top: 324px;
+    left: 960px;
     transform: translate(-50%, -50%);
+}
+
+.qrcode {
+    position: fixed;
+    top: 540px;
+    left: 710.4px;
 }
