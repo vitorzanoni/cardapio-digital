@@ -33,8 +33,8 @@ public class CardapioController {
     }
 
     @GetMapping
-    public List<ItemDTO> findItens(String nome) {
-        return cardapioService.findItens(nome);
+    public List<ItemDTO> findItens(String nome, String tipo) {
+        return cardapioService.findItens(nome, tipo);
     }
 
     @PutMapping("{id}")

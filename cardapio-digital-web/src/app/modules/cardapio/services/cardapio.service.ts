@@ -12,9 +12,12 @@ export class CardapioService {
 
     constructor(private http: HttpClient) { }
 
-    findItens(nome: string): Observable<ItemDto[]> {
+    findItens(nome: string, tipo: string): Observable<ItemDto[]> {
         if (nome) {
             return this.http.get<ItemDto[]>(`${API}cardapio?nome=${nome}`);
+        }
+        if (tipo){
+            return this.http.get<ItemDto[]>(`${API}cardapio?tipo=${tipo}`);
         }
         return this.http.get<ItemDto[]>(`${API}cardapio`);
     }

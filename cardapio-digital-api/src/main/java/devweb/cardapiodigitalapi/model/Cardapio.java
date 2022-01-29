@@ -27,4 +27,6 @@ public class Cardapio {
 
     private BigDecimal valor;
 
+    private String tipo;
+
 }

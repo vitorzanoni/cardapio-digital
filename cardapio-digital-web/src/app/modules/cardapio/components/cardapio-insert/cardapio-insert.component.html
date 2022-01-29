@@ -20,10 +20,20 @@
                     <mat-label>Imagem</mat-label>
                     <input matInput placeholder="Coloque o link da imagem aqui" [(ngModel)] = "imagem">
                 </mat-form-field>
+                <section class="example-section">
+                    <label class="example-margin">Tipo do Item:</label>
+                    <mat-radio-group [(ngModel)]="labelPosition">
+                      <mat-radio-button class="example-margin" value="/cardapio/comidas">Comida</mat-radio-button>
+                      <mat-radio-button class="example-margin" value="/cardapio/bebidas">Bebida</mat-radio-button>
+                      <mat-radio-button class="example-margin" value="/cardapio/sobremesas">Sobremesa</mat-radio-button>
+                    </mat-radio-group>
+                  </section>
+                
                 <div style="text-align: center;">
                     <button mat-raised-button style="background-color: #730d0d; color: white;" (click) = "salvar()">Salvar</button>
                 </div>
             </div>
+        
     </mat-card>
 
 </div>

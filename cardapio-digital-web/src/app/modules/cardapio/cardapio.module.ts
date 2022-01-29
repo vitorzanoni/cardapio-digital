@@ -6,12 +6,16 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
     {
-        path: '', 
+        path: 'comidas', 
         component: CardapioListComponent
     }, 
     {
         path: 'insert', 
         component: CardapioInsertComponent
+    },
+    {
+        path: 'bebidas', 
+        component: CardapioListComponent
     }
 ];
 @NgModule({

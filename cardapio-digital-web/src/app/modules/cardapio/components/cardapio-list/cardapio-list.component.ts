@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ComponentFactoryResolver, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ItemDto } from '../../models/item-dto';
 import { CardapioService } from '../../services/cardapio.service';
 
@@ -11,10 +12,11 @@ export class CardapioListComponent implements OnInit {
 
     itens: ItemDto[] = [];
 
-    constructor(private service: CardapioService) { }
+    constructor(private service: CardapioService, private router: Router) { }
 
     ngOnInit(): void {
-        this.service.findItens('').subscribe(itens => this.itens = itens);
+        console.log(this.router.url);
+        this.service.findItens('', this.router.url).subscribe(itens => this.itens = itens);
     }
 
 }
