@@ -20,12 +20,10 @@ public class CardapioServiceImpl implements CardapioService {
         if (nome != null) {
             return ItemDTO.toDTO(cardapioRepository.findByNome(nome));
         }
-        
-        if (tipo == null) {
+        if (tipo != null) {
             return ItemDTO.toDTO(cardapioRepository.findByTipo(tipo));
         }
         return ItemDTO.toDTO(cardapioRepository.findAll());
-       
     }
 
     @Override
