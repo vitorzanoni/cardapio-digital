@@ -17,7 +17,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
-
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatRadioModule} from '@angular/material/radio';
 @NgModule({
     declarations: [
     ],
@@ -39,7 +40,9 @@ import { RouterModule } from '@angular/router';
         CdkTableModule,
         MatSidenavModule,
         MatSortModule,
-        FlexLayoutModule
+        FlexLayoutModule,
+        MatCheckboxModule,
+        MatRadioModule
     ],
     exports: [
         CommonModule,
@@ -59,7 +62,9 @@ import { RouterModule } from '@angular/router';
         CdkTableModule,
         MatSidenavModule,
         MatSortModule,
-        FlexLayoutModule
+        FlexLayoutModule,
+        MatCheckboxModule,
+        MatRadioModule
     ]
 })
 export class SharedModule { }

@@ -6,7 +6,7 @@ import devweb.cardapiodigitalapi.dto.ItemDTO;
 
 public interface CardapioService {
 
-    List<ItemDTO> findItens(String nome);
+    List<ItemDTO> findItens(String nome, String tipo);
 
     void alterarItem(Long id, ItemDTO itemDTO);
 

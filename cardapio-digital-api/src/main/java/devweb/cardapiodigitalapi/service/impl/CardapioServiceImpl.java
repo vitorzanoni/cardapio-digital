@@ -16,11 +16,16 @@ public class CardapioServiceImpl implements CardapioService {
     @Autowired
     private CardapioRepository cardapioRepository;
 
-    public List<ItemDTO> findItens(String nome) {
-        if (nome == null) {
-            return ItemDTO.toDTO(cardapioRepository.findAll());
+    public List<ItemDTO> findItens(String nome, String tipo) {
+        if (nome != null) {
+            return ItemDTO.toDTO(cardapioRepository.findByNome(nome));
         }
-        return ItemDTO.toDTO(cardapioRepository.findByNome(nome));
+        
+        if (tipo == null) {
+            return ItemDTO.toDTO(cardapioRepository.findByTipo(tipo));
+        }
+        return ItemDTO.toDTO(cardapioRepository.findAll());
+       
     }
 
     @Override
@@ -35,6 +40,7 @@ public class CardapioServiceImpl implements CardapioService {
         item.setImagem(cardapioDTO.getImagem());
         item.setNome(cardapioDTO.getNome());
         item.setValor(cardapioDTO.getValor());
+        item.setTipo(cardapioDTO.getTipo());
         cardapioRepository.save(item);
 
     }
@@ -46,6 +52,7 @@ public class CardapioServiceImpl implements CardapioService {
         item.setImagem(cardapioDTO.getImagem());
         item.setNome(cardapioDTO.getNome());
         item.setValor(cardapioDTO.getValor());
+        item.setTipo(cardapioDTO.getTipo());
         cardapioRepository.save(item);
     }
 

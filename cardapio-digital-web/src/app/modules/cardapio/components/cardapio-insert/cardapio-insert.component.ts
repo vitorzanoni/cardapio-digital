@@ -13,6 +13,10 @@ export class CardapioInsertComponent {
   descricao = '';
   valor = '' ;
   imagem = '';
+  checked = false;
+  indeterminate = false;
+  labelPosition: '/cardapio/comidas' | '/cardapio/bebidas' | '/cardapio/sobremesas' = '/cardapio/comidas';
+  disabled = false;
 
   constructor(private service: CardapioService) { }
 
