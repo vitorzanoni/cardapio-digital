@@ -1,0 +1,31 @@
+.spacer {
+    flex: auto;
+}
+
+.scale-2 {
+    transform: scale(2);
+    font-family: 'Oswald', sans-serif;
+}
+
+.mat-toolbar {
+    position: fixed;
+    z-index: 2;
+}
+
+.mat-toolbar.mat-primary {
+    background-color: #730d0d;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+  td {
+    padding-right: 8px;
+  }

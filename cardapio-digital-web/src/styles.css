@@ -2,6 +2,6 @@
 @import '~normalize.css';
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400&display=swap');
-html, body { height: 100%; }
-body { margin: 0; }
+html, body { height: 100%;}
+body { margin: 0; background-color: #fffae8}
 * { font-family: 'Barlow Condensed', sans-serif; }

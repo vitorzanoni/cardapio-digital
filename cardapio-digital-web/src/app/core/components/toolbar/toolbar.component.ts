@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
+import { LoginService } from '../../services/login.service';
 
 @Component({
     selector: 'app-toolbar',
@@ -11,10 +12,13 @@ export class ToolbarComponent implements OnInit {
 
     @ViewChild('sidenav') sidenav!: MatSidenav;
 
-    constructor(private router: Router) { }
+    constructor(private router: Router, private autenticacao: LoginService) { }
 
     ngOnInit(): void {
-        this.router.navigate(['home']);
+        if (this.autenticacao.logado){
+            this.router.navigate(['home']);
+        }
+        this.router.navigateByUrl('login');
     }
 
     close(reason: string) {
