@@ -1,29 +1,26 @@
-.example-form {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .example-full-width {
-    width: 100%;
-  }
-
-  .mat-input-element {
-    caret-color: black;
+div {
+    margin: auto;
+    width: 30%;
+    padding: 200px;
 }
-
-  ::ng-deep .mat-focused .mat-form-field-label {
-    /*change color of label*/
-    color: black !important;
-   }
-  
-   ::ng-deep.mat-form-field-underline {
-    /*change color of underline*/
-    background-color: black !important;
-  } 
-  
-  ::ng-deep.mat-form-field-ripple {
-   /*change color of underline when focused*/
-   background-color: black !important;
-  }
-  
+mat-card-title {
+    font-family: 'Oswald', sans-serif; 
+    font-size: 30px;
+}
+mat-card-subtitle {
+    font-size: 15px;
+}
+th {
+    font-size: 15px;
+}
+td {
+    font-size: 15px;
+}
+table {
+    width: 100%;
+    margin: auto;
+}
+mat-card-content {
+    text-align: right;
+    font-size: 20px;
+}

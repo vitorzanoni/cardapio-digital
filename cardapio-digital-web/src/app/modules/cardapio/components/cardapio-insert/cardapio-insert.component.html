@@ -1,39 +1,37 @@
 <div style="margin: auto; width: 30%; padding: 200px;">
     <mat-card class="mat-elevation-z8">
-        <mat-card-title style = "margin-bottom: 30px;  font-family: 'Oswald', sans-serif">
+        <mat-card-title style="margin-bottom: 30px;  font-family: 'Oswald', sans-serif">
             Cadastro de Item
         </mat-card-title>
-            <div>
-                <mat-form-field class="example-full-width" appearance="fill">
-                    <mat-label>Nome do Item</mat-label>
-                    <input matInput placeholder="Ex. Pizza" [(ngModel)]="nome">
-                </mat-form-field>
-                <mat-form-field class="example-full-width" appearance="fill">
-                    <mat-label>Descrição</mat-label>
-                    <input matInput placeholder="Ex. Pizza de calabresa com azeitona" [(ngModel)] = "descricao">
-                </mat-form-field>
-                <mat-form-field class="example-full-width" appearance="fill">
-                    <mat-label>Valor</mat-label>
-                    <input matInput placeholder="Ex. 19,90" [(ngModel)] = "valor" type="number">
-                </mat-form-field>
-                <mat-form-field class="example-full-width" appearance="fill">
-                    <mat-label>Imagem</mat-label>
-                    <input matInput placeholder="Coloque o link da imagem aqui" [(ngModel)] = "imagem">
-                </mat-form-field>
-                <section class="example-section">
-                    <label class="example-margin">Tipo do Item:</label>
-                    <mat-radio-group [(ngModel)]="tipo">
-                      <mat-radio-button class="example-margin" value="/cardapio/comidas">Comida</mat-radio-button>
-                      <mat-radio-button class="example-margin" value="/cardapio/bebidas">Bebida</mat-radio-button>
-                      <mat-radio-button class="example-margin" value="/cardapio/sobremesas">Sobremesa</mat-radio-button>
-                    </mat-radio-group>
-                  </section>
-                
-                <div style="text-align: center;">
-                    <button mat-raised-button style="background-color: #730d0d; color: white;" (click) = "salvar()">Salvar</button>
-                </div>
+        <div>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Nome do Item</mat-label>
+                <input matInput placeholder="Ex. Pizza" [(ngModel)]="nome">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Descrição</mat-label>
+                <input matInput placeholder="Ex. Pizza de calabresa com azeitona" [(ngModel)]="descricao">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Valor</mat-label>
+                <input matInput placeholder="Ex. 19,90" [(ngModel)]="valor" type="number">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Imagem</mat-label>
+                <input matInput placeholder="Coloque o link da imagem aqui" [(ngModel)]="imagem">
+            </mat-form-field>
+            <section class="example-section">
+                <label class="example-margin">Tipo do Item:</label>
+                <mat-radio-group [(ngModel)]="tipo">
+                    <mat-radio-button class="example-margin" value="/cardapio/comidas">Comida</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="/cardapio/bebidas">Bebida</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="/cardapio/sobremesas">Sobremesa</mat-radio-button>
+                </mat-radio-group>
+            </section>
+            <div style="text-align: center;">
+                <button mat-raised-button style="background-color: #730d0d; color: white;"
+                    (click)="salvar()">Salvar</button>
             </div>
-        
+        </div>
     </mat-card>
-
 </div>
