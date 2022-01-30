@@ -16,6 +16,10 @@ const routes: Routes = [
     {
         path: 'bebidas', 
         component: CardapioListComponent
+    },
+    {
+        path: 'sobremesas', 
+        component: CardapioListComponent
     }
 ];
 @NgModule({

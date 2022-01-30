@@ -1,15 +1,38 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+import { ItemDto } from 'src/app/modules/cardapio/models/item-dto';
+import { CarrinhoService } from '../../services/carrinho.service';
 
 @Component({
-  selector: 'app-carrinho-list',
-  templateUrl: './carrinho-list.component.html',
-  styleUrls: ['./carrinho-list.component.css']
+    selector: 'app-carrinho-list',
+    templateUrl: './carrinho-list.component.html',
+    styleUrls: ['./carrinho-list.component.css']
 })
 export class CarrinhoListComponent implements OnInit {
+    displayedColumns: string[] = ['nome', 'valor'];
+    dataSource = new MatTableDataSource<ItemDto>();
+    @ViewChild(MatPaginator) paginator!: MatPaginator;
+    @ViewChild(MatSort) sort!: MatSort;
+    total = 0;
 
-  constructor() { }
+    ngAfterViewInit() {
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
+    }
 
-  ngOnInit(): void {
-  }
+    constructor(private carrinho: CarrinhoService) { }
+
+    ngOnInit(): void {
+        this.dataSource.data = this.carrinho.itens;
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
+        this.calculaTotal();
+    }
+
+    calculaTotal(): void {
+        this.dataSource.data.forEach(item => this.total += Number(item.valor));
+    }
 
 }
