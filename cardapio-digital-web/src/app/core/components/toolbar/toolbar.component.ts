@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { RoleDto } from '../../models/role-dto';
 import { LoginService } from '../../services/login.service';
 
 @Component({
@@ -10,15 +11,27 @@ import { LoginService } from '../../services/login.service';
 })
 export class ToolbarComponent implements OnInit {
 
+    logado!: boolean;
+    role!: RoleDto;
+    user!: string;
+    senha!: string;
     @ViewChild('sidenav') sidenav!: MatSidenav;
 
-    constructor(private router: Router, private autenticacao: LoginService) { }
+    constructor(private router: Router, private autenticacao: LoginService, public route: ActivatedRoute) { }
 
-    ngOnInit(): void {
-        if (this.autenticacao.logado){
+    async login() {
+        let role = this.autenticacao.login(this.user, this.senha).toPromise();
+        this.role = await role as RoleDto;
+        if (this.role) {
+            this.logado = true;
             this.router.navigate(['home']);
         }
-        this.router.navigateByUrl('login');
+    }
+
+    ngOnInit(): void {
+        if (this.logado) {
+            this.router.navigate(['home']);
+        }
     }
 
     close(reason: string) {

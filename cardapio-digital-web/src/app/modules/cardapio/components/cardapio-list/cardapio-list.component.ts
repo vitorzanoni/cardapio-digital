@@ -21,7 +21,6 @@ export class CardapioListComponent implements OnInit {
 
     adicionar(item: ItemDto): void {
         this.carrinho.adicionar(item);
-        console.log(this.carrinho.itens);
     }
 
 }

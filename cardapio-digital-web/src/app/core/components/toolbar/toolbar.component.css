@@ -4,7 +4,7 @@
 
 .scale-2 {
     transform: scale(2);
-    font-family: 'Oswald', sans-serif;
+    font-family: "Oswald", sans-serif;
 }
 
 .mat-toolbar {
@@ -33,5 +33,27 @@
     left: 0;
     right: 0;
     background-color: #fffae8;
-    
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: black !important;
+}
+
+::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: black !important;
+}
+
+::ng-deep.mat-form-field-ripple {
+    /*change color of underline when focused*/
+    background-color: black !important;
+}
+
+.mat-input-element {
+    caret-color: black;
 }

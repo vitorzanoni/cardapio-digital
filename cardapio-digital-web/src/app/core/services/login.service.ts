@@ -10,8 +10,6 @@ const API =  'http://localhost:8080/login';
 })
 export class LoginService {
 
-  logado!: boolean;
-  
   constructor(private http: HttpClient) {}
 
   login(user: string, senha: string): Observable<RoleDto> {

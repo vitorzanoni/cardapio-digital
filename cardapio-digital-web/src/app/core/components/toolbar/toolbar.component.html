@@ -1,22 +1,38 @@
 <mat-toolbar color="primary" class="mat-elevation-z4">
-    <button mat-icon-button (click)="sidenav.toggle()">
+    <button mat-icon-button (click)="sidenav.toggle()" *ngIf="route.children.length !== 0">
         <mat-icon>menu</mat-icon>
     </button>
     <span class="spacer"></span>
     <span class="scale-2">Cardápio Digital</span>
     <span class="spacer"></span>
-    <button mat-icon-button>
-        <mat-icon>
-            <span class="material-icons">search</span>
-        </mat-icon>
-    </button>
-    <button mat-icon-button>
+    <button mat-icon-button *ngIf="route.children.length !== 0">
         <mat-icon>
             <span class="material-icons" (click)="close('carrinho')">shopping_cart</span>
         </mat-icon>
     </button>
 </mat-toolbar>
-<mat-sidenav-container (backdropClick)="close('backdrop')">
+<div style="margin: auto; width: 30%; padding: 200px;">
+    <mat-card class="mat-elevation-z8">
+        <mat-card-title style="margin-bottom: 30px;  font-family: 'Oswald', sans-serif">
+            Bem-Vindo(a)!
+        </mat-card-title>
+        <div>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Usuário</mat-label>
+                <input matInput placeholder="Nome de usuário" [(ngModel)]="user">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Senha</mat-label>
+                <input matInput placeholder="Senha" [(ngModel)]="senha">
+            </mat-form-field>
+            <div style="text-align: center;">
+                <button mat-raised-button style="background-color: #730d0d; color: white;"
+                    (click)="login()">Login</button>
+            </div>
+        </div>
+    </mat-card>
+</div>
+<mat-sidenav-container (backdropClick)="close('backdrop')" *ngIf="route.children.length !== 0">
     <mat-sidenav #sidenav (keydown.escape)="close('escape')" disableClose style="margin-top: 40px;">
         <p><button mat-button style="width: 200px;"></button> </p>
         <p><button mat-button (click)="close('cardapio/insert')" style="width: 200px;"> Adicionar Novo </button></p>
