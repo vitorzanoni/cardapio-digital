@@ -15,7 +15,7 @@ export class LoginService {
   constructor(private http: HttpClient) {}
 
   login(user: string, senha: string): Observable<RoleDto> {
-    return this.http.get<RoleDto>(`${API}?user=${user}?senha=${senha}`);
+    return this.http.get<RoleDto>(`${API}?user=${user}&senha=${senha}`);
 
   }
 }

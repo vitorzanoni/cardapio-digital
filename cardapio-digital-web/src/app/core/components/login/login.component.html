@@ -4,32 +4,23 @@
     <span class="spacer"></span>
 </mat-toolbar>
 <div style="margin: auto; width: 30%; padding: 200px;">
-<mat-card class="mat-elevation-z8">
-    <form class="example-form">      
-        <table class="example-full-width" cellspacing="0"><tr>
-          <td><mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>First name</mat-label>
-            <input matInput>
-          </mat-form-field></td>
-          <td><mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Long Last Name That Will Be Truncated</mat-label>
-            <input matInput>
-          </mat-form-field></td>
-        </tr></table>
-      
-        <p>
+  <mat-card class="mat-elevation-z8">
+      <mat-card-title style="margin-bottom: 30px;  font-family: 'Oswald', sans-serif">
+          Bem-Vindo(a)!
+      </mat-card-title>
+      <div>
           <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Address</mat-label>
-            <textarea matInput placeholder="Ex. 100 Main St">1600 Amphitheatre Pkwy</textarea>
+              <mat-label>Usuário</mat-label>
+              <input matInput placeholder="Nome de usuário" [(ngModel)]="user" >
           </mat-form-field>
           <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Address 2</mat-label>
-            <textarea matInput></textarea>
+              <mat-label>Senha</mat-label>
+              <input matInput placeholder="Senha" [(ngModel)]="senha" >
           </mat-form-field>
-        </p>
-      </form>
-
-</mat-card>
+          <div style="text-align: center;">
+              <button mat-raised-button style="background-color: #730d0d; color: white;"
+                  (click)="login()">Login</button>
+          </div>
+      </div>
+  </mat-card>
 </div>
-
-
