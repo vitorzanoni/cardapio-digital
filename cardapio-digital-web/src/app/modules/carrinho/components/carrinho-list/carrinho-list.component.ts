@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ItemDto } from 'src/app/modules/cardapio/models/item-dto';
@@ -22,7 +23,7 @@ export class CarrinhoListComponent implements OnInit {
         this.dataSource.sort = this.sort;
     }
 
-    constructor(private carrinho: CarrinhoService) { }
+    constructor(private carrinho: CarrinhoService, private snackBar: MatSnackBar) { }
 
     ngOnInit(): void {
         this.dataSource.data = this.carrinho.itens;
@@ -33,6 +34,11 @@ export class CarrinhoListComponent implements OnInit {
 
     calculaTotal(): void {
         this.dataSource.data.forEach(item => this.total += Number(item.valor));
+    }
+
+    acionar(): void {
+        this.snackBar.open('Um garçom será solicitado para te atender.', 'OK', { horizontalPosition: 'center',
+            verticalPosition: 'top'});
     }
 
 }

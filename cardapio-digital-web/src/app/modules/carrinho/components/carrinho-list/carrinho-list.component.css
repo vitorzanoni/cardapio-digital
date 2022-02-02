@@ -4,7 +4,7 @@ div {
     padding: 200px;
 }
 mat-card-title {
-    font-family: 'Oswald', sans-serif; 
+    font-family: "Oswald", sans-serif;
     font-size: 30px;
 }
 mat-card-subtitle {
@@ -25,12 +25,6 @@ mat-card-content {
     font-size: 20px;
 }
 
-button{
-  size: 100px;  
-}
-
-section{
+section {
     text-align: center;
-    
-    
 }
