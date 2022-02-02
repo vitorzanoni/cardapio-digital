@@ -1,13 +1,15 @@
 <mat-toolbar color="primary" class="mat-elevation-z4">
     <button mat-icon-button (click)="sidenav.toggle()" *ngIf="route.children.length !== 0">
-        <mat-icon>menu</mat-icon>
+        <mat-icon>
+            <span class="material-icons">menu</span>
+        </mat-icon>
     </button>
     <span class="spacer"></span>
     <span class="scale-2">Cardápio Digital</span>
     <span class="spacer"></span>
-    <button mat-icon-button *ngIf="route.children.length !== 0">
+    <button mat-icon-button *ngIf="route.children.length !== 0" (click)="close('carrinho')">
         <mat-icon>
-            <span class="material-icons" (click)="close('carrinho')">shopping_cart</span>
+            <span class="material-icons">shopping_cart</span>
         </mat-icon>
     </button>
 </mat-toolbar>
@@ -16,6 +18,10 @@
         <mat-card-title style="margin-bottom: 30px;  font-family: 'Oswald', sans-serif">
             Bem-Vindo(a)!
         </mat-card-title>
+        <mat-card-subtitle style="font-size: 20px;">
+            <p>Usuário: gerente | Senha: senha123</p>
+            <p>Usuário: mesa1 | Senha: 1</p>
+        </mat-card-subtitle>
         <div>
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Usuário</mat-label>
@@ -23,7 +29,7 @@
             </mat-form-field>
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Senha</mat-label>
-                <input matInput placeholder="Senha" [(ngModel)]="senha">
+                <input matInput placeholder="Senha" [(ngModel)]="senha" type="password">
             </mat-form-field>
             <div style="text-align: center;">
                 <button mat-raised-button style="background-color: #730d0d; color: white;"
@@ -35,7 +41,8 @@
 <mat-sidenav-container (backdropClick)="close('backdrop')" *ngIf="route.children.length !== 0">
     <mat-sidenav #sidenav (keydown.escape)="close('escape')" disableClose style="margin-top: 40px;">
         <p><button mat-button style="width: 200px;"></button> </p>
-        <p><button mat-button (click)="close('cardapio/insert')" style="width: 200px;"> Adicionar Novo </button></p>
+        <p><button mat-button (click)="close('cardapio/insert')" style="width: 200px;"
+                *ngIf="autenticacao.trancode.role === 'GERENTE'"> Adicionar Novo </button></p>
         <p><button mat-button (click)="close('cardapio/comidas')" style="width: 200px;"> Massas </button></p>
         <p><button mat-button (click)="close('cardapio/bebidas')" style="width: 200px;"> Bebidas </button></p>
         <p><button mat-button (click)="close('cardapio/sobremesas')" style="width: 200px;"> Sobremesas </button></p>

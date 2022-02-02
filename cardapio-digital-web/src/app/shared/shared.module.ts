@@ -18,6 +18,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 @NgModule({
     declarations: [
     ],
@@ -41,7 +42,8 @@ import { RouterModule } from '@angular/router';
         MatSortModule,
         FlexLayoutModule,
         MatCheckboxModule,
-        MatRadioModule
+        MatRadioModule,
+        MatSnackBarModule
     ],
     exports: [
         CommonModule,
@@ -63,7 +65,8 @@ import { RouterModule } from '@angular/router';
         MatSortModule,
         FlexLayoutModule,
         MatCheckboxModule,
-        MatRadioModule
+        MatRadioModule,
+        MatSnackBarModule
     ]
 })
 export class SharedModule { }

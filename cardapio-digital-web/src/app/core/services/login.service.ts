@@ -3,17 +3,20 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { RoleDto } from '../models/role-dto';
 
-const API =  'http://localhost:8080/login';
+const API = 'http://localhost:8080/login';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class LoginService {
 
-  constructor(private http: HttpClient) {}
+    logado!: boolean;
+    trancode!: RoleDto;
 
-  login(user: string, senha: string): Observable<RoleDto> {
-    return this.http.get<RoleDto>(`${API}?user=${user}&senha=${senha}`);
+    constructor(private http: HttpClient) { }
 
-  }
+    login(user: string, senha: string): Observable<RoleDto> {
+        return this.http.get<RoleDto>(`${API}?user=${user}&senha=${senha}`);
+
+    }
 }

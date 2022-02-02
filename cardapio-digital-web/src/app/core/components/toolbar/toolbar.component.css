@@ -54,6 +54,6 @@
     background-color: black !important;
 }
 
-.mat-input-element {
+::ng-deep.mat-input-element {
     caret-color: black;
 }

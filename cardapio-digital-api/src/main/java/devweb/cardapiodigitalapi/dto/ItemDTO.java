@@ -14,6 +14,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class ItemDTO {
 
+    private Long id;
+
     private String nome;
 
     private String descricao;
@@ -25,6 +27,7 @@ public class ItemDTO {
     private String tipo;
 
     public ItemDTO(Cardapio item) {
+        this.id = item.getId();
         this.nome = item.getNome();
         this.descricao = item.getDescricao();
         this.valor = item.getValor();

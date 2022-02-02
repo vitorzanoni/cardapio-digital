@@ -6,4 +6,4 @@ INSERT INTO CARDAPIO (ID, NOME, DESCRICAO, VALOR, IMAGEM, TIPO) VALUES (5, 'Coca
 INSERT INTO CARDAPIO (ID, NOME, DESCRICAO, VALOR, IMAGEM, TIPO) VALUES (6, 'Água', 'Sem gás', 4.00, 'https://images-americanas.b2w.io/produtos/01/00/img7/01/00/item/1588123/0/1588123027_1GG.jpg', '/cardapio/bebidas');
 INSERT INTO CARDAPIO (ID, NOME, DESCRICAO, VALOR, IMAGEM, TIPO) VALUES (7, 'Petit Gateau', 'Chocolate', 7.50, 'https://pilotandofogao.com.br/wp-content/uploads/2020/08/Petit-Gateau.jpg', '/cardapio/sobremesas');
 INSERT INTO CARDAPIO (ID, NOME, DESCRICAO, VALOR, IMAGEM, TIPO) VALUES (8, 'Red Velvet', 'Fatia de bolo', 14.00, 'https://s2.glbimg.com/2_tIB5GwIIikBFu4XVG8XT_d_DY=/0x0:690x570/600x0/smart/filters:gifv():strip_icc()/s2.glbimg.com/c-JZ7Rco02MLoZDbdjsxZoc5DXI%3D/s.glbimg.com/et/gs/f/original/2016/02/22/bolo_red_velvet.jpg', '/cardapio/sobremesas');
-INSERT INTO USUARIO(ID, USER, SENHA, FUNCAO) VALUES (1, 'GERENTE', 'admin', 'GERENTE'), (2, 'MESA', 'usuario', NULL);
+INSERT INTO USUARIO(ID, USER, SENHA, FUNCAO) VALUES (1, 'gerente', 'senha123', 'GERENTE'), (2, 'mesa1', '1', 'MESA');

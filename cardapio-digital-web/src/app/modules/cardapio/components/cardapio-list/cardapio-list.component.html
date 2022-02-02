@@ -1,17 +1,45 @@
-<div class="content">
+<div class="content" *ngIf="!edit">
     <div fxLayout="row wrap" fxLayoutGap="16px grid">
         <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="100%" fxFlex.md="50%" *ngFor="let item of itens">
             <mat-card class="mat-elevation-z4">
                 <mat-card-title-group>
                     <mat-card-title>{{item.nome}}</mat-card-title>
-                    <mat-card-subtitle style="font-size: 20px;">R$ {{item.valor | number:'1.2-2'}}</mat-card-subtitle>
+                    <mat-card-subtitle style="font-size: 20px;">R$ {{item.valor | number:'1.2-2'}}
+                    </mat-card-subtitle>
                 </mat-card-title-group>
                 <img mat-card-image src="{{item.imagem}}" alt="Item">
                 <mat-card-content>{{item.descricao}}</mat-card-content>
-                <mat-card-actions>
+                <mat-card-actions style="text-align: center;">
                     <button (click)="adicionar(item)" mat-button>Pedir</button>
+                    <button (click)="editar(item)" mat-button
+                        *ngIf="autenticacao.trancode.role === 'GERENTE'">Editar</button>
+                    <button (click)="excluir(item)" mat-button
+                        *ngIf="autenticacao.trancode.role === 'GERENTE'">Excluir</button>
                 </mat-card-actions>
             </mat-card>
         </div>
     </div>
+</div>
+<div style="margin: auto; width: 30%; padding: 200px;" *ngIf="edit">
+    <mat-card class="mat-elevation-z4">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Nome do Item</mat-label>
+            <input matInput placeholder="Ex. Pizza" [(ngModel)]="item.nome">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Descrição</mat-label>
+            <input matInput placeholder="Ex. Pizza de calabresa com azeitona" [(ngModel)]="item.descricao">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Valor</mat-label>
+            <input matInput placeholder="Ex. 19,90" [(ngModel)]="item.valor" type="number">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Imagem</mat-label>
+            <input matInput placeholder="Coloque o link da imagem aqui" [(ngModel)]="item.imagem">
+        </mat-form-field>
+        <mat-card-actions style="text-align: center;">
+            <button (click)="salvar()" mat-button *ngIf="autenticacao.trancode.role === 'GERENTE'">Salvar</button>
+        </mat-card-actions>
+    </mat-card>
 </div>

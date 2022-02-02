@@ -26,4 +26,12 @@ export class CardapioService {
         return this.http.post(API + "cardapio/", item);
     }
 
+    editItem(item: ItemDto) {
+        return this.http.put(API + "cardapio/" + item.id, item);
+    }
+
+    deleteItem(item: ItemDto) {
+        return this.http.delete(API + "cardapio/" + item.id);
+    }
+
 }
